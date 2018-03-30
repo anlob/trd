@@ -1,0 +1,5 @@
+#ifndef CONF_H_INCLUDED
+#define CONF_H_INCLUDED
+
+
+#endif // CONF_H_INCLUDED
