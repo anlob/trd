@@ -1,0 +1,6 @@
+[submodule "libcpp-core"]
+	path = libcpp-core
+	url = git@odev:repo/libcpp-core.git
+[submodule "libtrapi"]
+	path = libtrapi
+	url = git@odev:repo/libtrapi.git
