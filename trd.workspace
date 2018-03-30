@@ -2,7 +2,9 @@
 <CodeBlocks_workspace_file>
 	<Workspace title="Workspace">
 		<Project filename="libcpp-core/src/libcpp-core.cbp" />
+		<Project filename="libcpp-core/tst/libcpp-core.tst.cbp" />
 		<Project filename="libtrapi/src/libtrapi.cbp" />
+		<Project filename="libtrapi/tst/libtrapi.tst.cbp" />
 		<Project filename="src/trd.cbp">
 			<Depends filename="libcpp-core/src/libcpp-core.cbp" />
 			<Depends filename="libtrapi/src/libtrapi.cbp" />
