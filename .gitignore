@@ -1,2 +1,5 @@
 trd.workspace.layout
 src/trd.layout
+src/bin/
+src/obj/
+src/trd.depend
