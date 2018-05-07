@@ -1,0 +1,10 @@
+F: Fiat money
+C: Cryptocurrency
+P: Price
+p: Percent factor
+
+F0 = C0 * P0
+Pn = P0 * p^n
+Fn = F0 * ((1+p)/2)^n
+Cn = C0 * ((1+1/p)/2)^n
+Fn = Cn * Pn
