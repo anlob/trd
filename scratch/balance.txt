@@ -3,8 +3,18 @@ C: Cryptocurrency
 P: Price
 p: Percent factor
 
-F0 = C0 * P0
+Fn = K * (Cn * Pn)
+
 Pn = P0 * p^n
 Fn = F0 * ((1+p)/2)^n
 Cn = C0 * ((1+1/p)/2)^n
-Fn = Cn * Pn
+
+
+Proof: Fn = K * (Cn * Pn)
+
+<=> (F0 * ((1+p)/2)^n) = K * (C0 * ((1+1/p)/2)^n) * (P0 * p^n)
+<=> F0 = K * C0 * P0 * (((1+1/p)/2) * p / ((1+p)/2))^n
+
+=>  (((1+1/p)/2) * p / ((1+p)/2))^n = 1
+=>   ((1+1/p)/2) * p / ((1+p)/2) = 1
+<=>  ((p+1)/2)       / ((1+p)/2) = 1
