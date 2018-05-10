@@ -2,6 +2,7 @@ F: Fiat money
 C: Cryptocurrency
 P: Price
 p: Percent factor
+K: Constant relation factor
 
 Fn = K * (Cn * Pn)
 
@@ -18,3 +19,18 @@ Proof: Fn = K * (Cn * Pn)
 =>  (((1+1/p)/2) * p / ((1+p)/2))^n = 1
 =>   ((1+1/p)/2) * p / ((1+p)/2) = 1
 <=>  ((p+1)/2)       / ((1+p)/2) = 1
+q.e.d
+
+
+F0' = F1 = F0 * ((1+p)/2)
+F0''= F0' * ((1+1/p)/2)
+    = F0 * ((1+p)/2) * ((1+1/p)/2) 
+    = F0 * (1+p) * (1+1/p) / 4
+    = F0 * (2+p+1/p) / 4
+    = F0 * (1/2 + (p+1/p)/4)
+
+=>  (p+1/p)/4 >= 1/2
+<=> (p+1/p) >= 2
+<=> p²+1 >= 2p
+<=> p²-2p+1 >= 0
+<=> (p-1)² >= 0
