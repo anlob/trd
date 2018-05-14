@@ -22,9 +22,11 @@ Proof: Fn = K * (Cn * Pn)
 q.e.d
 
 
-F0' = F1 = F0 * ((1+p)/2)
-F0''= F0' * ((1+1/p)/2)
-    = F0 * ((1+p)/2) * ((1+1/p)/2) 
+Proof: Logic guarantees profit for price step forward and back cycle
+
+F0' = F1  = F0  * ((1+p)/2)
+F0''= F1' = F0' * ((1+1/p)/2)
+    = F0 * ((1+p)/2) * ((1+1/p)/2)
     = F0 * (1+p) * (1+1/p) / 4
     = F0 * (2+p+1/p) / 4
     = F0 * (1/2 + (p+1/p)/4)
@@ -34,3 +36,4 @@ F0''= F0' * ((1+1/p)/2)
 <=> p²+1 >= 2p
 <=> p²-2p+1 >= 0
 <=> (p-1)² >= 0
+q.e.d
