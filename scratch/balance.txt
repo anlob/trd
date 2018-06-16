@@ -5,6 +5,7 @@ Copyright (c) 2018 Andreas Lobbes, andreas.lobbes@gmail.com. All rights reserved
 F: Fiat money (amount)
 C: Cryptocurrency (amount)
 P: Price (conversion factor)
+p: percent factor
 K: Constant relation factor
 
 
@@ -30,3 +31,31 @@ So we have Fn, Cn as functions of Pn:
 
 Fn = K / (K + 1) * (F0 + C0 * Pn)
 Cn = (C0 + F0 / Pn) / (K + 1)
+
+With Price function Pn given as:
+
+Pn = P0 * p^n
+
+we can describe Fn, Cn as functions of n:
+
+=> Fn = K / (K + 1) * (F0 + (C0 * P0) * p^n)
+=> Cn = (C0 + (F0 / P0) * p^-n) / (K + 1)
+
+With "F0 = K * C0 * P0" we can transform
+
+=> Fn = K / (K + 1) * (F0 + (F0  / K) * p^n)
+=> Cn = (C0 + (K  * C0) * p^-n) / (K + 1)
+
+<=>
+
+Fn = K / (K + 1) * (F0 + (F0 / K) * p^n) = (F0 * K + F0 * p^n) / (K + 1) = F0 * (K + p^n) / (K + 1)
+Cn = (C0 + (K * C0) * p^-n) / (K + 1) = C0 * (K + p^-n) / (K + 1)
+
+
+So let's summarize:
+
+1) Pn = P0 * p^n
+2) Fn = K * (Cn * Pn)
+3) Fn-F0 = - (Cn-C0) * Pn
+4) Fn = F0 * (K + p^n) / (K + 1)
+5) Cn = C0 * (K + p^-n) / (K + 1)
