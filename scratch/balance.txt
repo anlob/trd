@@ -59,3 +59,21 @@ So let's summarize:
 3) Fn-F0 = - (Cn-C0) * Pn
 4) Fn = F0 * (K + p^n) / (K + 1)
 5) Cn = C0 * (K + p^-n) / (K + 1)
+
+
+Proof: Logic guarantees profit for price step forward and back cycle
+
+F0' = F1 = F0 * (K + p) / (K + 1)
+F0'' = F1' = F0' * (K + 1/p) / (K + 1)
+     = F0 * (K + p) / (K + 1) * (K + 1/p) / (K + 1)
+     = F0 * (K + p) * (K + 1/p) / (K + 1)²
+
+ => (K + p) * (K + 1/p) >= (K + 1)²
+<=> K² + K*(p + 1/p) + 1 >= K² + 2K + 1
+<=> K*(p + 1/p) >= 2K
+<=> p + 1/p >= 2
+<=> p² + 1 >= 2p
+<=> p² -2p + 1 >= 0
+<=> (p - 1)² >= 0
+
+q.e.d.
