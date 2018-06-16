@@ -1,39 +1,32 @@
-F: Fiat money
-C: Cryptocurrency
-P: Price
-p: Percent factor
+"Balance" trading logic
+Copyright (c) 2018 Andreas Lobbes, andreas.lobbes@gmail.com. All rights reserved
+
+
+F: Fiat money (amount)
+C: Cryptocurrency (amount)
+P: Price (conversion factor)
 K: Constant relation factor
 
-Fn = K * (Cn * Pn)
 
-Pn = P0 * p^n
-Fn = F0 * ((1+p)/2)^n
-Cn = C0 * ((1+1/p)/2)^n
+We require, that value of crypto money is proportional to fiat money
+
+1) Fn = K * (Cn * Pn)
+2) Fn-F0 = - (Cn-C0) * Pn
+
+1) in 2)
+
+ => K * (Cn * Pn) - F0 =  - (Cn-C0) * Pn
+<=> K * (Cn * Pn) = - (Cn * Pn) + (C0 * Pn) + F0
+<=> (K + 1) * (Cn * Pn) = F0 + (C0 * Pn)
+<=> Cn = (C0 + F0/Pn) / (K + 1)
+
+last statement in 1)
+
+ => Fn = K * (Cn * Pn) = K * (C0 + F0/Pn) / (K + 1) * Pn
+<=> Fn = K / (K + 1) * (F0 + C0 * Pn)
 
 
-Proof: Fn = K * (Cn * Pn)
+So we have Fn, Cn as functions of Pn:
 
-<=> (F0 * ((1+p)/2)^n) = K * (C0 * ((1+1/p)/2)^n) * (P0 * p^n)
-<=> F0 = K * C0 * P0 * (((1+1/p)/2) * p / ((1+p)/2))^n
-
-=>  (((1+1/p)/2) * p / ((1+p)/2))^n = 1
-=>   ((1+1/p)/2) * p / ((1+p)/2) = 1
-<=>  ((p+1)/2)       / ((1+p)/2) = 1
-q.e.d
-
-
-Proof: Logic guarantees profit for price step forward and back cycle
-
-F0' = F1  = F0  * ((1+p)/2)
-F0''= F1' = F0' * ((1+1/p)/2)
-    = F0 * ((1+p)/2) * ((1+1/p)/2)
-    = F0 * (1+p) * (1+1/p) / 4
-    = F0 * (2+p+1/p) / 4
-    = F0 * (1/2 + (p+1/p)/4)
-
-=>  (p+1/p)/4 >= 1/2
-<=> (p+1/p) >= 2
-<=> p²+1 >= 2p
-<=> p²-2p+1 >= 0
-<=> (p-1)² >= 0
-q.e.d
+Fn = K / (K + 1) * (F0 + C0 * Pn)
+Cn = (C0 + F0 / Pn) / (K + 1)
