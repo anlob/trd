@@ -11,87 +11,71 @@ T: Capitalization (all exchanged to Fiat)
 
 We require, that value of crypto money is proportional to fiat money
 
-1) Fn = K * (Cn * Pn)
-2) Fn-F0 = - (Cn-C0) * Pn /// WRONG!!
+1) F = K * (C * P)
+2) F1-F0 = - (C1-C0) * P1
 
 1) in 2)
 
- => K * (Cn * Pn) - F0 =  - (Cn-C0) * Pn
-<=> K * (Cn * Pn) = - (Cn * Pn) + (C0 * Pn) + F0
-<=> (K + 1) * (Cn * Pn) = F0 + (C0 * Pn)
-<=> Cn = (C0 + F0/Pn) / (K + 1)
+ => K * (C1 * P1) - F0 =  - (C1-C0) * P1
+<=> K * (C1 * P1) = - (C1 * P1) + (C0 * P1) + F0
+<=> (K + 1) * (C1 * P1) = F0 + (C0 * P1)
+<=> C1 = (C0 + F0/P1) / (K + 1)
 
 last statement in 1)
 
- => Fn = K * (Cn * Pn) = K * (C0 + F0/Pn) / (K + 1) * Pn
-<=> Fn = K / (K + 1) * (F0 + C0 * Pn)
+ => F1 = K * (C1 * P1) = K * (C0 + F0/P1) / (K + 1) * P1
+<=> F1 = K / (K + 1) * (F0 + C0 * P1)
 
 
-So we have Fn, Cn as functions of Pn:
+So we have F1, C1 as functions of P1:
 
-Fn = K / (K + 1) * (F0 + C0 * Pn)
-Cn = (C0 + F0 / Pn) / (K + 1)
+F1 = K / (K + 1) * (F0 + C0 * P1)
+C1 = (C0 + F0 / P1) / (K + 1)
 
 With Price function Pn given as:
 
 Pn = P0 * p^n
 
-we can describe Fn, Cn as functions of n:
+we can describe F1, C1 as functions of p:
 
- => Fn = K / (K + 1) * (F0 + (C0 * P0) * p^n)
- => Cn = (C0 + (F0 / P0) * p^-n) / (K + 1)
+ => F1 = K / (K + 1) * (F0 + (C0 * P0) * p)
+ => C1 = (C0 + (F0 / P0) * p^-1) / (K + 1)
 
 With "F0 = K * C0 * P0" we can transform
 
- => Fn = K / (K + 1) * (F0 + (F0  / K) * p^n)
- => Cn = (C0 + (K  * C0) * p^-n) / (K + 1)
+ => F1 = K / (K + 1) * (F0 + (F0 / K) * p)
+ => C1 = (C0 + (K * C0) * p^-1) / (K + 1)
 
-<=> Fn = K / (K + 1) * (F0 + (F0 / K) * p^n) = (F0 * K + F0 * p^n) / (K + 1) = F0 * (K + p^n) / (K + 1)
-<=> Cn = (C0 + (K * C0) * p^-n) / (K + 1) = C0 * (K + p^-n) / (K + 1)
-
-
-The Capitalization is the sum of all values expressed in Fiat:
-
-Tn = Fn + (Cn * Pn)
-
-With "Fn = K * (Cn * Pn)" we can tranform:
-
- => Tn = K * (Cn * Pn) + (Cn * Pn) = (K + 1) * Cn * Pn
-
-With "Cn = C0 * (K + p^-n) / (K + 1)" inserted we get:
-
- => Tn = (K + 1) * C0 * (K + p^-n) / (K + 1) * Pn = (K + p^-n) * C0 * Pn
-
-Inserting "Pn = P0 * p^n" we get:
-
- => Tn = (K + p^-n) * C0 * P0 * p^n = C0 * P0 * (1 + K * p^n)
-
-Replacing "C0 * P0" with "F0 / K" we get:
-
- => Tn = F0 / K * (1 + K * p^n)
-<=> Tn = F0 * (1/K + p^n)
-
-With "T0 = F0 * (1/K + 1)" we can transform to:
-
- => Tn = T0 / (F0 * (1/K + 1)) * (F0 * (1/K + p^n)) = T0 * (1/K + p^n) / (1/K + 1)
+<=> F1 = (F0 * K + F0 * p) / (K + 1) = F0 * (K + p) / (K + 1)
+<=> C1 = C0 * (K/p + 1) / (K + 1)
 
 
 So let's summarize:
 
 1) Pn = P0 * p^n
-2) Fn = K * (Cn * Pn)
-3) Fn-F0 = - (Cn-C0) * Pn
-4) Fn = F0 * (K + p^n) / (K + 1)
-5) Cn = C0 * (K + p^-n) / (K + 1)
-6) Tn = F0 * (1/K + p^n) = T0 * (1/K + p^n) / (1/K + 1)
+2) F = K * (C * P)
+3) F0 = K * C0 * P0
+4) F1-F0 = - (C1-C0) * P1
+5) F1 = F0 * (K + p) / (K + 1)
+6) C1 = C0 * (K/p + 1) / (K + 1)
 
 
-Max profit for contigous price increase would be a max capitalization of "T0 * p^n".
-So degree of utilization in this case results to:
+Formula proof:
+use 2) for F1
 
-Un = Tn / (T0 * p^n) = (1 + 1/K * p^-n) / (1 + 1/K) = (K + p^-n) / (K + 1) = Cn / C0
+ => F1 = K * (C1 * P1)
 
-The higher the price increase, the lower is the degree of utilization.
+insert 6) for C1 and 1) for P1
+
+ => F1 = K * (C0 * (K/p + 1) / (K + 1)) * P0 * p
+<=> F1 = K * C0 * P0 * (K + p) / (K + 1)
+
+simplify with 3)
+
+ => F1 = F0 * (K + p) / (K + 1)
+
+which results to 5)
+q.e.d
 
 
 Proof: Logic guarantees profit for price step forward and back cycle
