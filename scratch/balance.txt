@@ -7,12 +7,12 @@ C: Cryptocurrency (amount)
 P: Price (conversion factor)
 p: percent factor
 K: Constant relation factor
-
+T: Capitalization (all exchanged to Fiat)
 
 We require, that value of crypto money is proportional to fiat money
 
 1) Fn = K * (Cn * Pn)
-2) Fn-F0 = - (Cn-C0) * Pn
+2) Fn-F0 = - (Cn-C0) * Pn /// WRONG!!
 
 1) in 2)
 
@@ -38,18 +38,42 @@ Pn = P0 * p^n
 
 we can describe Fn, Cn as functions of n:
 
-=> Fn = K / (K + 1) * (F0 + (C0 * P0) * p^n)
-=> Cn = (C0 + (F0 / P0) * p^-n) / (K + 1)
+ => Fn = K / (K + 1) * (F0 + (C0 * P0) * p^n)
+ => Cn = (C0 + (F0 / P0) * p^-n) / (K + 1)
 
 With "F0 = K * C0 * P0" we can transform
 
-=> Fn = K / (K + 1) * (F0 + (F0  / K) * p^n)
-=> Cn = (C0 + (K  * C0) * p^-n) / (K + 1)
+ => Fn = K / (K + 1) * (F0 + (F0  / K) * p^n)
+ => Cn = (C0 + (K  * C0) * p^-n) / (K + 1)
 
-<=>
+<=> Fn = K / (K + 1) * (F0 + (F0 / K) * p^n) = (F0 * K + F0 * p^n) / (K + 1) = F0 * (K + p^n) / (K + 1)
+<=> Cn = (C0 + (K * C0) * p^-n) / (K + 1) = C0 * (K + p^-n) / (K + 1)
 
-Fn = K / (K + 1) * (F0 + (F0 / K) * p^n) = (F0 * K + F0 * p^n) / (K + 1) = F0 * (K + p^n) / (K + 1)
-Cn = (C0 + (K * C0) * p^-n) / (K + 1) = C0 * (K + p^-n) / (K + 1)
+
+The Capitalization is the sum of all values expressed in Fiat:
+
+Tn = Fn + (Cn * Pn)
+
+With "Fn = K * (Cn * Pn)" we can tranform:
+
+ => Tn = K * (Cn * Pn) + (Cn * Pn) = (K + 1) * Cn * Pn
+
+With "Cn = C0 * (K + p^-n) / (K + 1)" inserted we get:
+
+ => Tn = (K + 1) * C0 * (K + p^-n) / (K + 1) * Pn = (K + p^-n) * C0 * Pn
+
+Inserting "Pn = P0 * p^n" we get:
+
+ => Tn = (K + p^-n) * C0 * P0 * p^n = C0 * P0 * (1 + K * p^n)
+
+Replacing "C0 * P0" with "F0 / K" we get:
+
+ => Tn = F0 / K * (1 + K * p^n)
+<=> Tn = F0 * (1/K + p^n)
+
+With "T0 = F0 * (1/K + 1)" we can transform to:
+
+ => Tn = T0 / (F0 * (1/K + 1)) * (F0 * (1/K + p^n)) = T0 * (1/K + p^n) / (1/K + 1)
 
 
 So let's summarize:
@@ -59,6 +83,15 @@ So let's summarize:
 3) Fn-F0 = - (Cn-C0) * Pn
 4) Fn = F0 * (K + p^n) / (K + 1)
 5) Cn = C0 * (K + p^-n) / (K + 1)
+6) Tn = F0 * (1/K + p^n) = T0 * (1/K + p^n) / (1/K + 1)
+
+
+Max profit for contigous price increase would be a max capitalization of "T0 * p^n".
+So degree of utilization in this case results to:
+
+Un = Tn / (T0 * p^n) = (1 + 1/K * p^-n) / (1 + 1/K) = (K + p^-n) / (K + 1) = Cn / C0
+
+The higher the price increase, the lower is the degree of utilization.
 
 
 Proof: Logic guarantees profit for price step forward and back cycle
@@ -83,15 +116,15 @@ The profit of such a price swing is:
 
 F0'' / F0 = (K + p) * (K + 1/p) / (K + 1)²
 
-The theoretical maximum profit for a price swing would be p² (p > 1),
+The theoretical maximum profit for a price swing would be p (p > 1),
 if you exchange all the crypto money for Fiat and back.
 So the relation between real and maximum profit (eg. degree of utilization) is:
 
-U(K) = (K + p) * (K + 1/p) / (K + 1)² * p²
+U(K) = ((K + p) * (K + 1/p)) / ((K + 1)² * p)
 
 
-Graphs for K with different amplitude swings (p = 1.05, p = 1.10, p = 1.15)
+Graphs for K with different price amplitude swings (p = 1.05, p = 1.10, p = 1.15)
 
-http://www.wolframalpha.com/input/?i=plot+((x+%2B+1.05)+(x+%2B+1%2F1.05))+%2F+((x+%2B+1)%C2%B2+*+1.05%C2%B2)
-http://www.wolframalpha.com/input/?i=plot+((x+%2B+1.1)+(x+%2B+1%2F1.1))+%2F+((x+%2B+1)%C2%B2+*+1.1%C2%B2)
-http://www.wolframalpha.com/input/?i=plot+((x+%2B+1.15)+(x+%2B+1%2F1.15))+%2F+((x+%2B+1)%C2%B2+*+1.15%C2%B2)
+http://www.wolframalpha.com/input/?i=plot+((x+%2B+1.05)+(x+%2B+1%2F1.05))+%2F+((x+%2B+1)%C2%B2+*+1.05)
+http://www.wolframalpha.com/input/?i=plot+((x+%2B+1.1)+(x+%2B+1%2F1.1))+%2F+((x+%2B+1)%C2%B2+*+1.1)
+http://www.wolframalpha.com/input/?i=plot+((x+%2B+1.15)+(x+%2B+1%2F1.15))+%2F+((x+%2B+1)%C2%B2+*+1.15)
