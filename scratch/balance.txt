@@ -61,6 +61,7 @@ So let's summarize:
 6) C1 = C0 * (K/p + 1) / (K + 1)
 7) Fn = F0 * ((K + p) / (K + 1))^n
 8) Cn = C0 * ((K/p + 1) / (K + 1))^n
+9) T = F * (1/K + 1)
 
 
 Formula proof:
@@ -121,17 +122,85 @@ q.e.d.
 
 The profit of such a price swing is:
 
-F0'' / F0 = (K + p) * (K + 1/p) / (K + 1)²
+F0'' / F0 - 1 = (K + p) * (K + 1/p) / (K + 1)² - 1
 
-The theoretical maximum profit for a price swing would be p (p > 1),
+d(F0'' / F0 - 1) / dK = (K - 1) / (K + 1)³ * (p - 1)² / p = 0, for K = 1
+Thus max profit results for K = 1.
+
+The theoretical maximum profit for a price swing would be p - 1 (p > 1),
 if you exchange all the crypto money for Fiat and back.
 So the relation between real and maximum profit (eg. degree of utilization) is:
 
-U(K) = ((K + p) * (K + 1/p)) / ((K + 1)² * p)
+U(K) = (F0'' / F0 - 1) / (p - 1) = ((K + p) * (K + 1/p) / (K + 1)² - 1) / (p - 1)
+
+Graphs of profit as function of K with different price amplitude swings (p = 1.05, p = 1.10, p = 1.15)
+
+Google:
+http://www.google.com/search?q=plot+%28%28x+%2B+1.05%29+%28x+%2B+1%2F1.05%29%29+%2F+%28x+%2B+1%29%5E2+-+1
+http://www.google.com/search?q=plot+%28%28x+%2B+1.1%29+%28x+%2B+1%2F1.1%29%29+%2F+%28x+%2B+1%29%5E2+-+1
+http://www.google.com/search?q=plot+%28%28x+%2B+1.15%29+%28x+%2B+1%2F1.15%29%29+%2F+%28x+%2B+1%29%5E2+-+1
+
+WolframAlpha:
+http://www.wolframalpha.com/input/?i=plot+((x+%2B+1.05)+(x+%2B+1%2F1.05))+%2F+(x+%2B+1)%5E2-1
+http://www.wolframalpha.com/input/?i=plot+((x+%2B+1.1)+(x+%2B+1%2F1.1))+%2F+(x+%2B+1)%5E2-1
+http://www.wolframalpha.com/input/?i=plot+((x+%2B+1.15)+(x+%2B+1%2F1.15))+%2F+(x+%2B+1)%5E2-1
+
+Meaningful values for K are in the range [0.5, 2].
+
+Graphs of degree of utilization as function of K with different price amplitude swings (p = 1.05, p = 1.10, p = 1.15)
+
+Google:
+http://www.google.com/search?q=plot+%28%28%28x+%2B+1.05%29+%28x+%2B+1%2F1.05%29%29+%2F+%28x+%2B+1%29%5E2-1%29%2F%281.05-1%29
+http://www.google.com/search?q=plot+%28%28%28x+%2B+1.1%29+%28x+%2B+1%2F1.1%29%29+%2F+%28x+%2B+1%29%5E2-1%29%2F%281.1-1%29
+http://www.google.com/search?q=plot+%28%28%28x+%2B+1.15%29+%28x+%2B+1%2F1.15%29%29+%2F+%28x+%2B+1%29%5E2-1%29%2F%281.15-1%29
+
+WolframAlpha:
+http://www.wolframalpha.com/input/?i=plot+(((x+%2B+1.05)+(x+%2B+1%2F1.05))+%2F+(x+%2B+1)%5E2-1)%2F(1.05-1)
+http://www.wolframalpha.com/input/?i=plot+(((x+%2B+1.1)+(x+%2B+1%2F1.1))+%2F+(x+%2B+1)%5E2-1)%2F(1.1-1)
+http://www.wolframalpha.com/input/?i=plot+(((x+%2B+1.15)+(x+%2B+1%2F1.15))+%2F+(x+%2B+1)%5E2-1)%2F(1.15-1)
+
+The bigger the price step, the better the degree of utilization.
+Therefore, a configured price step should not be infinitesimal, but approximately equal to the average amplitude of a swing.
 
 
-Graphs for K with different price amplitude swings (p = 1.05, p = 1.10, p = 1.15)
+With a steady price increase the profit results to:
 
-http://www.wolframalpha.com/input/?i=plot+((x+%2B+1.05)+(x+%2B+1%2F1.05))+%2F+((x+%2B+1)%C2%B2+*+1.05)
-http://www.wolframalpha.com/input/?i=plot+((x+%2B+1.1)+(x+%2B+1%2F1.1))+%2F+((x+%2B+1)%C2%B2+*+1.1)
-http://www.wolframalpha.com/input/?i=plot+((x+%2B+1.15)+(x+%2B+1%2F1.15))+%2F+((x+%2B+1)%C2%B2+*+1.15)
+ => Fn / F0 -1 = ((K + p) / (K + 1))^n - 1
+
+And the theoretical maximum profit is:
+
+ => Pn / P0 -1 = p^n - 1
+
+Thus the degree of utilization is:
+
+ => Un = (Fn / F0 - 1) * (Pn / P0 - 1) = (((K + p) / (K + 1))^n - 1) / (p^n - 1)
+
+Graphs of degree of utilization as function of n, with K = 1 and different price steps (p = 1.05, p = 1.10, p = 1.15)
+
+Google:
+http://www.google.com/search?q=plot+(((1+%2B+1.05)+%2F+(1+%2B+1))%5Ex+-+1)+%2F+(1.05%5Ex+-+1)
+http://www.google.com/search?q=plot+(((1+%2B+1.1)+%2F+(1+%2B+1))%5Ex+-+1)+%2F+(1.1%5Ex+-+1)
+http://www.google.com/search?q=plot+(((1+%2B+1.15)+%2F+(1+%2B+1))%5Ex+-+1)+%2F+(1.15%5Ex+-+1)
+
+WolframAlpha:
+http://www.wolframalpha.com/input/?i=plot+(((1+%2B+1.05)+%2F+(1+%2B+1))%5Ex+-+1)+%2F+(1.05%5Ex+-+1)
+http://www.wolframalpha.com/input/?i=plot+(((1+%2B+1.1)+%2F+(1+%2B+1))%5Ex+-+1)+%2F+(1.1%5Ex+-+1)
+http://www.wolframalpha.com/input/?i=plot+(((1+%2B+1.15)+%2F+(1+%2B+1))%5Ex+-+1)+%2F+(1.15%5Ex+-+1)
+
+They look roughly proportional. Thus we can eliminate p as variable and use a fixed (usual) value of 1.05 instead.
+
+
+Graphs of degree of utilization as function of n, K (p = 1.05)
+
+Google:
+http://www.google.com/search?q=plot+%28%28%28y+%2B+1.05%29+%2F+%28y+%2B+1%29%29%5Ex+-+1%29+%2F+%281.05%5Ex+-+1%29
+
+Graphs of degree of utilization as function of n and different K (0.5, 1.0, 1.5), with p = 1.05
+
+http://www.google.com/search?q=plot+(((0.5+%2B+1.05)+%2F+(0.5+%2B+1))%5Ex+-+1)+%2F+(1.05%5Ex+-+1)
+http://www.google.com/search?q=plot+(((1+%2B+1.05)+%2F+(1+%2B+1))%5Ex+-+1)+%2F+(1.05%5Ex+-+1)
+http://www.google.com/search?q=plot+(((1.5+%2B+1.05)+%2F+(1.5+%2B+1))%5Ex+-+1)+%2F+(1.05%5Ex+-+1)
+
+Degree of utilization is significantly better for smaller Ks.
+Thus if you expect long-term price gains, you should keep K small, to 0.5 or may even less.
+If you do not expect price gains but rather swings in the long term, you should operatoe with a value of K around 1.
