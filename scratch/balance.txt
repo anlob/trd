@@ -9,6 +9,7 @@ p: percent factor
 K: Constant relation factor
 T: Capitalization (all exchanged to Fiat)
 
+
 We require, that value of crypto money is proportional to fiat money
 
 1) F = K * (C * P)
@@ -58,6 +59,8 @@ So let's summarize:
 4) F1-F0 = - (C1-C0) * P1
 5) F1 = F0 * (K + p) / (K + 1)
 6) C1 = C0 * (K/p + 1) / (K + 1)
+7) Fn = F0 * ((K + p) / (K + 1))^n
+8) Cn = C0 * ((K/p + 1) / (K + 1))^n
 
 
 Formula proof:
@@ -75,6 +78,26 @@ simplify with 3)
  => F1 = F0 * (K + p) / (K + 1)
 
 which results to 5)
+q.e.d
+
+inserting 5) and 6) in 4) we get
+
+ => F0 * (K + p) / (K + 1) - F0 = - (C0 * (K/p + 1) / (K + 1) - C0) * P1
+
+using 1)
+
+ => F0 * ((K + p) / (K + 1) - 1) = - ((K/p + 1) / (K + 1) - 1) * C0 * P0 * p
+<=> F0 * ((K + p) / (K + 1) - 1) = - ((K + p) / (K + 1) - p) * C0 * P0
+
+using 3)
+
+ => K * C0 * P0 ((K + p) / (K + 1) - 1) = - ((K + p) / (K + 1) - p) * C0 * P0
+<=> K * ((K + p) / (K + 1) - 1) = - ((K + p) / (K + 1) - p)
+<=> K * (K + p) / (K + 1) - K = - (K + p) / (K + 1) + p
+<=> (K + 1) * (K + p) / (K + 1) - K = p
+<=> (K + p) - K = p
+<=> p = p
+
 q.e.d
 
 
