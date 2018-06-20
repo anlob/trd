@@ -3,14 +3,14 @@ Copyright (c) 2018 Andreas Lobbes, andreas.lobbes@gmail.com. All rights reserved
 
 
 F: Fiat money (amount)
-C: Cryptocurrency (amount)
+C: Commodity (amount)
 P: Price (conversion factor)
 p: percent factor
 K: Constant relation factor
 T: Capitalization (all exchanged to Fiat)
 
 
-We require, that value of crypto money is proportional to fiat money
+We require, that value of commodity is proportional to fiat money
 
 1) F = K * (C * P)
 2) F1-F0 = - (C1-C0) * P1
@@ -128,7 +128,7 @@ d(F0'' / F0 - 1) / dK = (K - 1) / (K + 1)³ * (p - 1)² / p = 0, for K = 1
 Thus max profit results for K = 1.
 
 The theoretical maximum profit for a price swing would be p - 1 (p > 1),
-if you exchange all the crypto money for Fiat and back.
+if you exchange all commodity to fiat money and back.
 So the relation between real and maximum profit (eg. degree of utilization) is:
 
 U(K) = (F0'' / F0 - 1) / (p - 1) = ((K + p) * (K + 1/p) / (K + 1)² - 1) / (p - 1)
@@ -162,6 +162,9 @@ http://www.wolframalpha.com/input/?i=plot+(((x+%2B+1.15)+(x+%2B+1%2F1.15))+%2F+(
 The bigger the price step, the better the degree of utilization.
 Therefore, a configured price step should not be infinitesimal, but approximately equal to the average amplitude of a swing.
 
+GraphSketch:
+https://graphsketch.com/?eqn1_color=1&eqn1_eqn=((x%20%2B%201.05)%20(x%20%2B%201%2F1.05))%20%2F%20(x%20%2B%201)%5E2%20-%201&eqn2_color=2&eqn2_eqn=((x%20%2B%201.1)%20(x%20%2B%201%2F1.1))%20%2F%20(x%20%2B%201)%5E2%20-%201&eqn3_color=3&eqn3_eqn=((x%20%2B%201.15)%20(x%20%2B%201%2F1.15))%20%2F%20(x%20%2B%201)%5E2%20-%201&eqn4_color=4&eqn4_eqn=(((x%20%2B%201.1)%20(x%20%2B%201%2F1.1))%20%2F%20(x%20%2B%201)%5E2%20-%201)%20%2F%20(1.1%20-%201)&eqn5_color=5&eqn5_eqn=(((x%20%2B%201.05)%20(x%20%2B%201%2F1.05))%20%2F%20(x%20%2B%201)%5E2%20-%201)%20%2F%20(1.05%20-%201)&eqn6_color=6&eqn6_eqn=(((x%20%2B%201.15)%20(x%20%2B%201%2F1.15))%20%2F%20(x%20%2B%201)%5E2%20-%201)%20%2F%20(1.15%20-%201)&x_min=0&x_max=4&y_min=0&y_max=0.033&x_tick=.1&y_tick=.001&x_label_freq=10&y_label_freq=10&do_grid=0&do_grid=1&bold_labeled_lines=0&bold_labeled_lines=1&line_width=4&image_w=850&image_h=525
+
 
 With a steady price increase the profit results to:
 
@@ -173,7 +176,7 @@ And the theoretical maximum profit is:
 
 Thus the degree of utilization is:
 
- => Un = (Fn / F0 - 1) * (Pn / P0 - 1) = (((K + p) / (K + 1))^n - 1) / (p^n - 1)
+ => Un = (Fn / F0 - 1) / (Pn / P0 - 1) = (((K + p) / (K + 1))^n - 1) / (p^n - 1)
 
 Graphs of degree of utilization as function of n, with K = 1 and different price steps (p = 1.05, p = 1.10, p = 1.15)
 
@@ -202,5 +205,5 @@ http://www.google.com/search?q=plot+(((1+%2B+1.05)+%2F+(1+%2B+1))%5Ex+-+1)+%2F+(
 http://www.google.com/search?q=plot+(((1.5+%2B+1.05)+%2F+(1.5+%2B+1))%5Ex+-+1)+%2F+(1.05%5Ex+-+1)
 
 Degree of utilization is significantly better for smaller Ks.
-Thus if you expect long-term price gains, you should keep K small, to 0.5 or may even less.
-If you do not expect price gains but rather swings in the long term, you should operatoe with a value of K around 1.
+Thus the more you expect long-term price gains, the smaller should be K, in the range [0.5, 1] or may even lower.
+If you do not expect price gains but rather swings in the long term, you should operate with a value of K around 1.
