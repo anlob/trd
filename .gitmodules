@@ -4,3 +4,6 @@
 [submodule "libtrapi"]
 	path = libtrapi
 	url = ../libtrapi.git
+[submodule "trd-pub"]
+	path = doc/pub
+	url = ../trd-pub.git
