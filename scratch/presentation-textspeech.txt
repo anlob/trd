@@ -1,15 +1,19 @@
 Hello,
 
 my name is Andreas.
-===
-No, this ist not Bill Gates
-and this is not a garage.
-But in fact I would say,
-that there might be some similarities.
-===
 
-I want to talk about handling of cryptocurrencies,
-that is trading and usage for end users.
+// ===
+// No, this ist not Bill Gates
+// and this is not a garage.
+// But in fact I would say,
+// that there might be some similarities.
+// ===
+
+I want to talk about volatility
+of assets, especially cryptocurrencies,
+what does it mean for end users and
+a solution how to handle this.
+
 The volatility of cryptocurrencies makes usage
 and trading difficult.
 
@@ -22,33 +26,34 @@ by coffee grounds reading technique.
 They bet on rising prices or sell hastily
 if the price threatens to topple.
 This amplifies trends the longer they are lasting.
-=== (pointing on "chart" pic)
+// === (pointing on "chart" pic)
 Every little rumor is taken as an opportunity,
 to derive a price trend from it.
 
 The consequences are a highly volatile portfolio,
 sleepless nights and, in most cases, profit losses.
 Me, as a typical end user does not want to spend
-a signigicant part of his life in front of the monitor
-studying charts. I simply want to secure my earned
-fiat money by exchanging it to a currency,
-which cannot be devaluated by inflation. And of course
-I want to make some profit in the long term, as I expect
-raising acceptance and usage respectively, which
+a signigicant part of his life in front of the
+monitor studying charts. I simply want to secure
+my earned fiat money by exchanging it to a currency,
+which cannot be devaluated by inflation. And of
+course I want to make some profit in the long term,
+as I expect increasing acceptance and usage, which
 automatically should lead to an increase in value,
-when more an more goods and services need to be mapped
-to a finite amount of cryptocurrency.
+when more an more goods and services need to be
+mapped to a finite amount of cryptocurrency.
 And most important:
-I do not want to go to bed as a millionaire and stand up
-as a beggar, as the next crash has happened
-during the night.
+I do not want to go to bed as a millionaire
+and stand up as a beggar, as the next crash
+has happened during the night.
 
 I see a market gap here. End users need support
-by professional software, which handles this volatility
-without need of Interaction.
+by professional software, which handles this
+volatility without need of Interaction.
 
 The result of this I call it "Balance" Trading Logic.
 === (switching to "water column" pic)
+
 Some advantages of it:
 - Foolproof
 - Implementation does not need much bandwidth
@@ -61,12 +66,14 @@ The basic idea is to share gains and losses
 across all assets in your portfolio.
 Within this picture the capitalization of each
 asset is represented as a water column.
+
 All water columns are interconnected, so the
 water levels in all water columns are about
 the same. All interconnections are controlled
-by valves, which open and euqalize all levels
-again, when the price of one asset changes
-more than a defined hysteresis interval.
+by valves, which do open and thus equalize
+all water levels again, once the price of one 
+asset changes more than a defined hysteresis
+interval.
 And this is exactly the only one rule defining
 this model: The capitalizations of all assets
 are in balance, they are about the same,
@@ -77,7 +84,7 @@ What does that mean in consequence?
 Let's say the price for a particular asset
 is rising. This would result to an increase
 of the water level in related water column.
-If the prices increases more than the defined
+If the price increases more than the defined
 hysteresis interval, all valves get opened
 and the water levels get equalized again.
 In real this is
@@ -92,6 +99,41 @@ other assets get partially sold and the
 sales proceeds is invested in that asset,
 whose price is currently falling.
 Figuratively speaking, the water flows from all
-other water columns into that water column,
+other water columns into that column,
 which is currently leaking.
 
+What are the results of this algorithm?
+=== (switching to "chart2" pic)
+
+If you make profit due to an increasing price,
+a part of it gets changed to other assets.
+The other way around assets get partially sold,
+to invest in a particular one, whose price is
+currently falling.
+This optimizes the average purchasing price
+of that particular asset and thus makes the
+asset more profitable on the next price increase
+
+Let me demonstrate this with a portfolio
+of two assets:
+In the lower part of the chart the black curve
+is the price of asset 1.
+The red curve is the related capitalization
+of asset 1.
+The green curve is the capitalization of
+asset 2, whose price is constant.
+The capitalization curves are overlaid
+and have another skaling.
+
+The price of asset 1 increases and breaks
+the hysteresis interval, so assets
+get rebalanced, which means, that some
+of the profit of asset 1 is invested in
+asset 2.
+Then the price of asset 1 is falling.
+At it's minimum the hysteresis interval
+has been exceeded again and assets
+get rebalanced once again.
+
+
+Thank you for watching.
