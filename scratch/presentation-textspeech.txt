@@ -1,0 +1,97 @@
+Hello,
+
+my name is Andreas.
+===
+No, this ist not Bill Gates
+and this is not a garage.
+But in fact I would say,
+that there might be some similarities.
+===
+
+I want to talk about handling of cryptocurrencies,
+that is trading and usage for end users.
+The volatility of cryptocurrencies makes usage
+and trading difficult.
+
+- Short-term price changes can not or rarely
+be addressed, as an individual can not respond
+adequately to them at any time.
+
+- The vast majority of traders try to make profits
+by coffee grounds reading technique.
+They bet on rising prices or sell hastily
+if the price threatens to topple.
+This amplifies trends the longer they are lasting.
+=== (pointing on "chart" pic)
+Every little rumor is taken as an opportunity,
+to derive a price trend from it.
+
+The consequences are a highly volatile portfolio,
+sleepless nights and, in most cases, profit losses.
+Me, as a typical end user does not want to spend
+a signigicant part of his life in front of the monitor
+studying charts. I simply want to secure my earned
+fiat money by exchanging it to a currency,
+which cannot be devaluated by inflation. And of course
+I want to make some profit in the long term, as I expect
+raising acceptance and usage respectively, which
+automatically should lead to an increase in value,
+when more an more goods and services need to be mapped
+to a finite amount of cryptocurrency.
+And most important:
+I do not want to go to bed as a millionaire and stand up
+as a beggar, as the next crash has happened
+during the night.
+
+I see a market gap here. End users need support
+by professional software, which handles this volatility
+without need of Interaction.
+
+The result of this I call it "Balance" Trading Logic.
+=== (switching to "water column" pic)
+Some advantages of it:
+- Foolproof
+- Implementation does not need much bandwidth
+- Does trade acyclic, similar to the rule:
+  "Buy when there's blood in the streets".
+
+How does it function:
+
+The basic idea is to share gains and losses
+across all assets in your portfolio.
+Within this picture the capitalization of each
+asset is represented as a water column.
+All water columns are interconnected, so the
+water levels in all water coulumns are almost
+the same. Each interconnection is controlled
+by a valve, which opens up from a certain
+pressure difference. So the water level difference
+in two water columns is never greater then
+the resulting pressure difference, to open
+related valve and equalize both levels.
+And this is exactly the only one rule defining
+this model: The capitalizations of all assets
+are in balance, they are almost the same,
+at any time.
+
+What does that mean in consequence?
+
+Let's say the price for a particular currency
+is rising. This would result to an increase
+of the water level in related water column.
+But as the water column is interconnected
+with all others, the water level in all
+water columns raises, which is in real
+performed by selling some of that currency,
+whose price is currently increasing and the
+sales proceeds is spread amongst all other
+assets by purchasing.
+
+Similar, when the price of a currency is falling,
+other assets get sold and the sales proceeds
+is used to purchase more of that curreny,
+whose price is currently falling.
+Figuratively speaking, the water flows from all
+the other water columns into that water column,
+which is currently leaking
+
