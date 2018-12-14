@@ -62,36 +62,36 @@ across all assets in your portfolio.
 Within this picture the capitalization of each
 asset is represented as a water column.
 All water columns are interconnected, so the
-water levels in all water coulumns are almost
-the same. Each interconnection is controlled
-by a valve, which opens up from a certain
-pressure difference. So the water level difference
-in two water columns is never greater then
-the resulting pressure difference, to open
-related valve and equalize both levels.
+water levels in all water columns are about
+the same. All interconnections are controlled
+by valves, which open and euqalize all levels
+again, when the price of one asset changes
+more than a defined hysteresis interval.
 And this is exactly the only one rule defining
 this model: The capitalizations of all assets
-are in balance, they are almost the same,
+are in balance, they are about the same,
 at any time.
 
 What does that mean in consequence?
 
-Let's say the price for a particular currency
+Let's say the price for a particular asset
 is rising. This would result to an increase
 of the water level in related water column.
-But as the water column is interconnected
-with all others, the water level in all
-water columns raises, which is in real
-performed by selling some of that currency,
+If the prices increases more than the defined
+hysteresis interval, all valves get opened
+and the water levels get equalized again.
+In real this is
+performed by selling some of that asset,
 whose price is currently increasing and the
 sales proceeds is spread amongst all other
 assets by purchasing.
 
-Similar, when the price of a currency is falling,
-other assets get sold and the sales proceeds
-is used to purchase more of that curreny,
+Similar, when the price of an asset is falling
+- below hysteresis interval -
+other assets get partially sold and the
+sales proceeds is invested in that asset,
 whose price is currently falling.
 Figuratively speaking, the water flows from all
-the other water columns into that water column,
-which is currently leaking
+other water columns into that water column,
+which is currently leaking.
 
