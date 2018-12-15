@@ -9,12 +9,12 @@ my name is Andreas.
 // that there might be some similarities.
 // ===
 
-I want to talk about volatility
+I would like to talk about volatility
 of assets, especially cryptocurrencies,
 what does it mean for end users and
 a solution how to handle this.
 
-The volatility of cryptocurrencies makes usage
+Volatility of cryptocurrencies makes usage
 and trading difficult.
 
 - Short-term price changes can not or rarely
@@ -109,10 +109,9 @@ If you make profit due to an increasing price,
 a part of it gets changed to other assets.
 The other way around assets get partially sold,
 to invest in a particular one, whose price is
-currently falling.
-This optimizes the average purchasing price
-of that particular asset and thus makes the
-asset more profitable on the next price increase
+currently falling. This optimizes its average
+purchasing price and thus makes the asset more
+profitable on the next price increase.
 
 Let me demonstrate this with a portfolio
 of two assets:
@@ -124,16 +123,44 @@ The green curve is the capitalization of
 asset 2, whose price is constant.
 The capitalization curves are overlaid
 and have another skaling.
+In the upper part of the chart the overall
+capitalization of both assets is shown, that
+is the sum of the red and the green curve.
 
-The price of asset 1 increases and breaks
-the hysteresis interval, so assets
-get rebalanced, which means, that some
-of the profit of asset 1 is invested in
-asset 2.
-Then the price of asset 1 is falling.
-At it's minimum the hysteresis interval
-has been exceeded again and assets
-get rebalanced once again.
+So how cann we read the chart:
 
+Price of asset 1 increases and exceeds
+hysteresis interval.
+Assets get rebalanced, which means,
+that some of the profit of asset 1 is
+invested in asset 2.
+Price of asset 1 is falling.
+At it's minimum it exceeds hysteresis
+interval again and assets get rebalanced,
+once again. This time a part of asset 2
+is used to invest in asset 1, whose
+price got cheaper.
+This procedure is shown for two periods.
+
+What are the results:
+
+In the upper part of the chart you see
+the overall capitalization and as you
+can see, the logic was able to generate
+profit, even on a sideway trend.
+The only thing you need therefore is
+volatility.
+
+And this is exactly what I want:
+
+This logic does not generate maximum
+profit. But it's foolproof, reliable.
+It works without interaction. This
+logic does not maneuver your portfolio
+in an unforeseen conditoin. It works,
+always.
+You don't need to spend any time
+in trading. You can lay back and let
+the algorithm do the job for you.
 
 Thank you for watching.
